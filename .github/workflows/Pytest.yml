@@ -19,4 +19,4 @@ jobs:
     - name: Download dependencies
       run: pip install pytest numpy  
     - name: Running tests
-      run: pytest tests
+      run: pytest src/tests
