@@ -5,24 +5,11 @@ name: Sphinx
 on: [push]
 
 jobs:
-  build:
-
+  docs:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
       with:
-        python-version: '3.7' 
-        architecture: 'x64' 
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-    - name: Download Sphinx
-      run: pip install sphinx      
-    - name: Update .rst files
-      run: sphinx-apidoc -o src/docs src/Simplex
-    - name: going in directory
-      run: cd src/docs
-    - name: make html 
-      run: make html 
+        docs-folder: "docs/"
+        build-command: "sphinx-build -b html . _build"
