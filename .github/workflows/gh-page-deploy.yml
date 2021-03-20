@@ -1,5 +1,5 @@
 
-name: sphinx-doc
+name: gh-pages
 
 on:
   push:
