@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Pytest
+name: Sphinx
 
 on: [push]
 
@@ -22,5 +22,7 @@ jobs:
       run: pip install sphinx      
     - name: Update .rst files
       run: sphinx-apidoc -o src/docs src/Simplex
+    - name: going in directory
+      run: cd src/docs
     - name: make html 
       run: make html 
