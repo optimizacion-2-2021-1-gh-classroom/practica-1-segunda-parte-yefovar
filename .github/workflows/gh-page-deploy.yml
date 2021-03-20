@@ -4,6 +4,15 @@ name: gh-pages
 on: [push]
 
 jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "src/docs/"
+        build-command: "sphinx-build -b html . _build"
+
   deploy:
     runs-on: ubuntu-18.04
 
