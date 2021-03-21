@@ -1,9 +1,24 @@
-#from __init__ import *
-#from Simplex import *
+from src.simplex.__init__ import *
 from scipy.optimize import linprog
 from pytest import approx
+import numpy as np
 
 #Maximization case
+
+c = np.array([3, 5])
+b = np.array([4, 12, 18])
+A = np.array([[1,  0],
+              [0,  2],
+              [3, 2]]) 
+
+opt = linprog(c=-c, A_ub=A, b_ub=b,
+              method="simplex")
+python_result = opt.x
+
+problema = Simplex(c,A,b,problem='Max')
+method_result = problema.solve()
+
+print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
 
 #Minimization case
 
