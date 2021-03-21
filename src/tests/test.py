@@ -19,6 +19,7 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
 python_result = opt.x
 
 print(os.getcwd())
+print('holaaaaaa')
 #problema = Simplex(c,A,b,problem='Min')
 #method_result = problema.solve()
 
