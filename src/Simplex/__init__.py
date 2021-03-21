@@ -1,10 +1,12 @@
 import numpy as np
 
 class Simplex:
+    
     """
     This class creates a simplex solver for linear programming.
     """
     def __init__(self,c = None,A = None ,b = None):
+        
         """
         Creates variables associated to the linear programing problem
         
@@ -28,6 +30,7 @@ class Simplex:
         self.x = np.zeros(self.b.size)
         
     def solve(self):
+        
         """
         Solves the simplex algorithm. 
 
