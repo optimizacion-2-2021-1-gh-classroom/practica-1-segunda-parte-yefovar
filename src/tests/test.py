@@ -1,4 +1,5 @@
-from Symplex import *
+#from Symplex import *
+import os
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
@@ -17,6 +18,7 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
               method="simplex")
 python_result = opt.x
 
+print(os.getcwd())
 #problema = Simplex(c,A,b,problem='Min')
 #method_result = problema.solve()
 
