@@ -1,4 +1,5 @@
 #from Symplex import *
+from src import *
 import os
 from scipy.optimize import linprog
 from pytest import approx
