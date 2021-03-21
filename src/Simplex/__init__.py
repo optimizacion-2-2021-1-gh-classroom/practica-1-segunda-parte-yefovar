@@ -5,8 +5,8 @@ class Simplex:
     """
     This class creates a simplex solver for linear programming.
     """
-    def __init__(self,c = None,A = None ,b = None):
-        
+    
+    def __init__(self,c = None,A = None ,b = None, problem = None)):
         """
         Creates variables associated to the linear programing problem
         
@@ -17,14 +17,20 @@ class Simplex:
         :param A: Matrix associated to the linear restrictions for the objective function. 
         
         :type b:  numpy 1XM array
-        :param b: array asociated with constraints to the linear restrictions for the objective function. 
+        :param b: array asociated with constraints to the linear restrictions for the objective function.
+        
+        :type problem: str
+        :param problem: definition of maximization ('Max') or minimization ('Min') problem.
         
         :type x:  numpy 1D array
         :param x: array of solution vector once the solve method is applied. 
         
         """
         
-        self.c=c
+        if problem == 'Max':
+            self.c=-c  
+        else:
+            self.c=c
         self.A=A
         self.b=b
         self.x = np.zeros(self.b.size)
@@ -82,7 +88,7 @@ class Simplex:
                 else:
                     lista2.append(x_B[indice]/d[indice])
             
-            idx_x_B = lista2.index(min(lista2))
+            idx_x_B = lista2.index(min(np.array(lista2)[np.isfinite(lista2)]))
             
             x_min_plus = x_B[idx_x_B]/d[idx_x_B]
             
