@@ -109,7 +109,17 @@ class Simplex:
                 lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]]))
                 i = i + 1
             idx_x_N = lista.index(max(lista))
-          
+
+        lista = []
+
+        for indice in range(0,len(B_list_idx)):
+        j=0
+            for indice2 in range(0,len(B_list_idx)):
+                if B_list_idx[indice2] == indice:
+                    lista.append(x_B[indice])
+                    j = j + 1
+                elif (indice2 == len(B_list_idx) - 1 and j == 0):
+                    lista.append(0)
             
         #Solucion
         self.x = x_B
