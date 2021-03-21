@@ -1,9 +1,5 @@
 import numpy as np
 
-#Entrada del problema
-
-
-
 class Simplex:
     """
     This class creates a simplex solver for linear programming.
@@ -43,8 +39,6 @@ class Simplex:
         c_N = self.c
         A = self.A
         b = self.b
-        
-       # Creacion de auxiliares
       
         n_c_N = c_N.size
         n_A = np.size(A,0)
@@ -109,9 +103,18 @@ class Simplex:
                 lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]]))
                 i = i + 1
             idx_x_N = lista.index(max(lista))
-          
+
+        lista3 = []
+
+        for indice in range(0,len(B_list_idx)):
+            j=0
+            for indice2 in range(0,len(B_list_idx)):
+                if B_list_idx[indice2] == indice:
+                    lista3.append(x_B[indice])
+                    j = j + 1
+                elif (indice2 == len(B_list_idx) - 1 and j == 0):
+                    lista3.append(0)
             
         #Solucion
-        self.x = x_B
-        return x_B
-    
+        self.x = lista3
+        return lista3
