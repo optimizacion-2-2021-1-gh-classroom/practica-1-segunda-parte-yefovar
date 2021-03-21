@@ -2,6 +2,7 @@ from __init__ import *
 #from Simplex import *
 from scipy.optimize import linprog
 from pytest import approx
+import numpy as np
 
 #Maximization case
 
