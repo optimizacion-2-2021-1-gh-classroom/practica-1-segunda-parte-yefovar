@@ -1,6 +1,5 @@
-#from __init__ import *
-
-from Simplex import *
+from __init__ import *
+#from Simplex import *
 from scipy.optimize import linprog
 from pytest import approx
 
@@ -9,12 +8,10 @@ from pytest import approx
 #Minimization case
 
 c = np.array([1, 1, -4])
-
-A = np.array([[ 1,  1,  2],
-              [ 1,  1, -1],
-              [-1,  1,  1]])
-
-b = np.array([9,2,4])
+b = np.array([9, 2, 4])
+A = np.array([[1,  1,  2],
+              [1,  1, -1],
+              [-1, 1,  1]]) 
 
 opt = linprog(c=c, A_ub=A, b_ub=b,
               method="simplex")
