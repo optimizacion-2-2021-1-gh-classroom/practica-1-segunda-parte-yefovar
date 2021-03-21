@@ -1,0 +1,5 @@
+#Paqueteria necesaria
+
+numpy
+pytest
+scipy
