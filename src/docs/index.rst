@@ -6,11 +6,11 @@
 Welcome to Simplex's documentation!
 ===================================
 
+Hola mundo!
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-
 
 Indices and tables
 ==================
