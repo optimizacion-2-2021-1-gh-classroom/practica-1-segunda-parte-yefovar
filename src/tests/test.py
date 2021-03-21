@@ -1,4 +1,4 @@
-from src.Simplex import *
+from src import *
 #from Simplex import *
 from scipy.optimize import linprog
 from pytest import approx
