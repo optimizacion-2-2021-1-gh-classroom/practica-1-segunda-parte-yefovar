@@ -9,7 +9,7 @@ on:
       -src/docs/**
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-latest
     steps:
     
