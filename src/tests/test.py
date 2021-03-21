@@ -1,5 +1,4 @@
-#from src import Symplex
-#from src import *
+from src.Symplex.__init__ import *
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
