@@ -1,5 +1,5 @@
-from src import *
-#from Simplex import *
+import Symplex
+#from src import *
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
