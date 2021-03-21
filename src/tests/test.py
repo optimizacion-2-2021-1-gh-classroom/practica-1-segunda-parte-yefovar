@@ -1,4 +1,4 @@
-from __init__ import Symplex
+from src import Symplex
 #from src import *
 from scipy.optimize import linprog
 from pytest import approx
