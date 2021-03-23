@@ -1,4 +1,4 @@
-from Simplex import *
+from __init__ import *
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
