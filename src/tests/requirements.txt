@@ -3,4 +3,3 @@
 numpy
 pytest
 scipy
-os
