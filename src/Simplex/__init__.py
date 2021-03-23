@@ -6,7 +6,7 @@ class Simplex:
     This class creates a simplex solver for linear programming.
     """
     
-    def __init__(self,c = None,A = None ,b = None, problem = None)):
+    def __init__(self,c = None,A = None ,b = None, problem = None):
         """
         Creates variables associated to the linear programing problem
         
@@ -115,7 +115,7 @@ class Simplex:
 
         lista3 = []
 
-        for indice in range(0,len(B_list_idx)):
+        for indice in range(0,n_c_N):
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
