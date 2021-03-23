@@ -18,8 +18,6 @@ python_result = opt.x
 problema = Simplex(c,A,b,problem='Max')
 method_result = problema.solve()
 
-print(method_result)
-print(python_result)
 print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
 
 #Minimization case
