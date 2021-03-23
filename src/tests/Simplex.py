@@ -113,7 +113,7 @@ class Simplex:
 
         lista3 = []
 
-        for indice in range(0,len(B_list_idx)):
+        for indice in range(0,n_c_N):
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
