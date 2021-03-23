@@ -1,4 +1,4 @@
-#from __init__ import *
+from Simplex import *
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
@@ -15,10 +15,10 @@ opt = linprog(c=-c, A_ub=A, b_ub=b,
               method="simplex")
 python_result = opt.x
 
-#problema = Simplex(c,A,b,problem='Max')
-#method_result = problema.solve()
+problema = Simplex(c,A,b,problem='Max')
+method_result = problema.solve()
 
-#print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
+print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
 
 #Minimization case
 
@@ -32,7 +32,7 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
               method="simplex")
 python_result = opt.x
 
-#problema = Simplex(c,A,b,problem='Min')
-#method_result = problema.solve()
+problema = Simplex(c,A,b,problem='Min')
+method_result = problema.solve()
 
-#print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
+print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
