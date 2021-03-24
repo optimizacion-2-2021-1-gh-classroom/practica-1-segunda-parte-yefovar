@@ -7,17 +7,15 @@ Welcome to Simplex's documentation!
 ===================================
 
 Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex. 
-r"""
-   :math:
 
-      max c^Tx
+   :math:`c^Tx`
 
       S.A.
 
       Ax<=b
 
       x>=0
-"""
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
