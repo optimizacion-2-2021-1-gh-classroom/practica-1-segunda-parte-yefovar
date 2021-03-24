@@ -6,7 +6,9 @@
 Welcome to Simplex's documentation!
 ===================================
 
-Hola mundo!
+Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex. 
+..latex::
+\lambda
 
 .. toctree::
    :maxdepth: 2
