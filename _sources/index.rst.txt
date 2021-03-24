@@ -8,8 +8,8 @@ Welcome to Simplex's documentation!
 
 Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex. 
 
-   .. math::
-      :nowrap:
+   :math:
+      
          c^Tx
 
          S.A.
