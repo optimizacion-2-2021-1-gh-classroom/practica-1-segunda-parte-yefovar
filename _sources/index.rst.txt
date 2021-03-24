@@ -10,15 +10,15 @@ Este paquete se utiliza para resolver problemas de maximización de Programació
 
 Problema de Maximización
 ========================
-   :math:`c^Tx`
+   :math:`c^Tx`\\
    
-   :math:`S.A`
+   :math:`S.A`\\
    
-   :math:`Ax\leq b`
+   :math:`Ax\leq b`\\
   
-   :math:`x \geq 0`
+   :math:`x \geq 0`\\
 
-      
+   Con :math:`c,x \in \mathbb{R}^n ; A \ in \mathbb{R}^{m \times n}; b\in \mathbb{R}^m`
 
 .. toctree::
    :maxdepth: 2
