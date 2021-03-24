@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Simplex's documentation!
+Documentacion del paquete Simplex!
 ===================================
 
 Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex. 
