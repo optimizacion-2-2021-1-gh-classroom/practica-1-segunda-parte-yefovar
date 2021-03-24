@@ -18,7 +18,13 @@ Problema de Maximización
   
    :math:`x \geq 0`\
 
-   Con :math:`c,x \in \mathbb{R}^n ; A \ in \mathbb{R}^{m \times n}; b\in \mathbb{R}^m`
+   Con: 
+   
+   :math:`c,x \in \mathbb{R}^n`\
+   
+   :math:`A \ in \mathbb{R}^{m \times n}`\
+   
+   :math:`b\in \mathbb{R}^m`\
 
 .. toctree::
    :maxdepth: 2
