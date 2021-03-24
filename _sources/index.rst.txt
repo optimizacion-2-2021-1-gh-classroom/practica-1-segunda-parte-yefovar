@@ -10,6 +10,7 @@ Este paquete se utiliza para resolver problemas de maximización de Programació
 
 Problema de Maximización
 ========================
+Problema de maximización de una función objetivo lineal con restricciones:
    :math:`\max_x c^Tx`\
    
    :math:`S.A`\
