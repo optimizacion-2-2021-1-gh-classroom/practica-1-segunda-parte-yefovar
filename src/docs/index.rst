@@ -22,7 +22,7 @@ Problema de Maximización
    
    :math:`c,x \in \mathbb{R}^n`\
    
-   :math:`A \ in \mathbb{R}^{m \times n}`\
+   :math:`A \in \mathbb{R}^{m \times n}`\
    
    :math:`b\in \mathbb{R}^m`\
 
