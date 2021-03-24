@@ -10,13 +10,13 @@ Este paquete se utiliza para resolver problemas de maximización de Programació
 
 ..math::
 
-max c^Tx
+   max c^Tx
 
-S.A.
+   S.A.
 
-Ax<=b
+   Ax<=b
 
-x>=0
+   x>=0
 
 .. toctree::
    :maxdepth: 2
