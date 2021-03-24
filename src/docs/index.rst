@@ -10,7 +10,7 @@ Este paquete se utiliza para resolver problemas de maximización de Programació
 
 Problema de Maximización
 ========================
-   :math:`c^Tx`\
+   :math:`\max_x c^Tx`\
    
    :math:`S.A`\
    
