@@ -11,8 +11,11 @@ Este paquete se utiliza para resolver problemas de maximización de Programació
 Problema de Maximización
 ========================
    :math:`c^Tx`
+   
    :math:`S.A`
+   
    :math:`Ax\leq b`
+  
    :math:`x \geq 0`
 
       
