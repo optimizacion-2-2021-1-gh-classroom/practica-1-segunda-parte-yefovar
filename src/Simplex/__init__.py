@@ -124,6 +124,6 @@ class Simplex:
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
                     lista3.append(0)
             
-        #Solucion 
+        #Solucion Simplex
         self.x = lista3
         return lista3
