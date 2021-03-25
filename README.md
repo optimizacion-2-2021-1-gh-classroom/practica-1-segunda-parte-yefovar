@@ -28,9 +28,10 @@ con:
 
 ![equation](https://latex.codecogs.com/gif.latex?b\quad\epsilon\quad\mathbb{R}^{m})
 
+
+### Botón de binder 
 Para consultar ejemplos de implementaciones usa el boton de binder.
 
-## Botón de binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar/main?urlpath=lab)
 
