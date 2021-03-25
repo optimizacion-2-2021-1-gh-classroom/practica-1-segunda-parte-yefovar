@@ -24,6 +24,10 @@ Implementamos un paquete en Python que resuelve problemas de maximización de un
 
 ![equation](https://latex.codecogs.com/gif.latex?b\&space;\epsilon&space;\&space;\mathbb{R}^{m})
 
+```math 
+Ax \leq b
+```
+
 ## Botón de binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar/main?urlpath=lab)
