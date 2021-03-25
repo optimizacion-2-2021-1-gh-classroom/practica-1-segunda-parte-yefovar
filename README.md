@@ -22,11 +22,8 @@ Implementamos un paquete en Python que resuelve problemas de maximización de un
 
 ![equation](https://latex.codecogs.com/gif.latex?A\&space;\epsilon\&space;\mathbb{R}^{m\times&space;n})
 
-![equation](https://latex.codecogs.com/gif.latex?b\&space;\epsilon&space;\&space;\mathbb{R}^{m})
+![equation](https://latex.codecogs.com/gif.latex?b\,&space;\epsilon&space;\,&space;\mathbb{R}^{m})
 
-```math 
-Ax \leq b
-```
 
 ## Botón de binder
 
