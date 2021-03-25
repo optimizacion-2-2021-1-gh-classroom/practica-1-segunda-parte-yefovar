@@ -111,17 +111,17 @@ class Simplex:
                 i = i + 1
             idx_x_N = lista.index(max(lista))
 
-        lista3 = []
+        Solution = []
 
         for indice in range(0,n_c_N):
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
-                    lista3.append(x_B[indice])
+                    Solution.append(x_B[indice])
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
-                    lista3.append(0)
+                    Solution.append(0)
             
         #Solucion
-        self.x = lista3
-        return lista3
+        self.x = Solution
+        return Solution
