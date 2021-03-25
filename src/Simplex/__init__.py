@@ -113,7 +113,7 @@ class Simplex:
                 i = i + 1
             idx_x_N = lista.index(max(lista))
 
-        lista3 = []
+        solution = []
 
         for indice in range(0,n_c_N):
             j=0
@@ -125,5 +125,5 @@ class Simplex:
                     lista3.append(0)
             
         #Solucion Simplex
-        self.x = lista3
-        return lista3
+        self.x = solution
+        return solution
