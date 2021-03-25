@@ -1,4 +1,3 @@
-#dummy line
 FROM ubuntu:bionic
 ENV JUPYTERLAB_VERSION 1.1.0
 ENV USER_BINDER jovyan
@@ -15,6 +14,7 @@ RUN apt-get update && apt-get install -y \
             python3-setuptools \
             nodejs && pip3 install --upgrade pip
             
+
 RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git /home/jovyan/practica-1-segunda-parte-yefovar
 RUN pip install /home/jovyan/practica-1-segunda-parte-yefovar/src/
             
