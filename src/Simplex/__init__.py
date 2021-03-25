@@ -11,19 +11,24 @@ class Simplex:
         Creates variables associated to the linear programing problem
         
         :type c: numpy 1D array
-        :param c: array asociated with the cost or coefficients of lineal objective function. 
+        :param c: array asociated with the cost or coefficients of 
+                    lineal objective function. 
         
         :type A:  numpy NxM array
-        :param A: Matrix associated to the linear restrictions for the objective function. 
+        :param A: Matrix associated to the linear restrictions for
+                    the objective function. 
         
         :type b:  numpy 1XM array
-        :param b: array asociated with constraints to the linear restrictions for the objective function.
+        :param b: array asociated with constraints to the linear 
+                    restrictions for the objective function.
         
         :type problem: str
-        :param problem: definition of maximization ('Max') or minimization ('Min') problem.
+        :param problem: definition of maximization ('Max') or 
+                        minimization ('Min') problem.
         
         :type x:  numpy 1D array
-        :param x: array of solution vector once the solve method is applied. 
+        :param x: array of solution vector once the 
+                    solve method is applied. 
         
         """
         
@@ -42,7 +47,7 @@ class Simplex:
 
         Returns
         -------
-        : x_B : Numpy array with solution
+        :solution: Numpy array with solution
 
         """
         c_N = self.c
