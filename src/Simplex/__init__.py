@@ -1,3 +1,4 @@
+
 import numpy as np
 
 class Simplex:
@@ -130,5 +131,6 @@ class Simplex:
                     solution.append(0)
             
         #Solucion Simplex
+       
         self.x = solution
         return solution
