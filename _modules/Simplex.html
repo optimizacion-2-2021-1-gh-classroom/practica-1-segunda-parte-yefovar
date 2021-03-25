@@ -45,19 +45,24 @@
 <span class="sd">        Creates variables associated to the linear programing problem</span>
 <span class="sd">        </span>
 <span class="sd">        :type c: numpy 1D array</span>
-<span class="sd">        :param c: array asociated with the cost or coefficients of lineal objective function. </span>
+<span class="sd">        :param c: array asociated with the cost or coefficients of </span>
+<span class="sd">                    lineal objective function. </span>
 <span class="sd">        </span>
 <span class="sd">        :type A:  numpy NxM array</span>
-<span class="sd">        :param A: Matrix associated to the linear restrictions for the objective function. </span>
+<span class="sd">        :param A: Matrix associated to the linear restrictions for</span>
+<span class="sd">                    the objective function. </span>
 <span class="sd">        </span>
 <span class="sd">        :type b:  numpy 1XM array</span>
-<span class="sd">        :param b: array asociated with constraints to the linear restrictions for the objective function.</span>
+<span class="sd">        :param b: array asociated with constraints to the linear </span>
+<span class="sd">                    restrictions for the objective function.</span>
 <span class="sd">        </span>
 <span class="sd">        :type problem: str</span>
-<span class="sd">        :param problem: definition of maximization (&#39;Max&#39;) or minimization (&#39;Min&#39;) problem.</span>
+<span class="sd">        :param problem: definition of maximization (&#39;Max&#39;) or </span>
+<span class="sd">                        minimization (&#39;Min&#39;) problem.</span>
 <span class="sd">        </span>
 <span class="sd">        :type x:  numpy 1D array</span>
-<span class="sd">        :param x: array of solution vector once the solve method is applied. </span>
+<span class="sd">        :param x: array of solution vector once the </span>
+<span class="sd">                    solve method is applied. </span>
 <span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
@@ -76,7 +81,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        : x_B : Numpy array with solution</span>
+<span class="sd">        :solution: Numpy array with solution</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">c_N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span>
@@ -147,20 +152,20 @@
                 <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="n">idx_x_N</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
 
-        <span class="n">lista3</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">solution</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_c_N</span><span class="p">):</span>
             <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
             <span class="k">for</span> <span class="n">indice2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">B_list_idx</span><span class="p">)):</span>
                 <span class="k">if</span> <span class="n">B_list_idx</span><span class="p">[</span><span class="n">indice2</span><span class="p">]</span> <span class="o">==</span> <span class="n">indice</span><span class="p">:</span>
-                    <span class="n">lista3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
+                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
                     <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="k">elif</span> <span class="p">(</span><span class="n">indice2</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">B_list_idx</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-                    <span class="n">lista3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             
-        <span class="c1">#Solucion</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">lista3</span>
-        <span class="k">return</span> <span class="n">lista3</span></div></div>
+        <span class="c1">#Solucion Simplex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>
+        <span class="k">return</span> <span class="n">solution</span></div></div>
 </pre></div>
 
           </div>

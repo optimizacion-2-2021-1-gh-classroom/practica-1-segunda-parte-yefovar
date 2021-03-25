@@ -6,16 +6,35 @@
 Documentacion del paquete Simplex!
 ===================================
 
-Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex. 
+Este paquete se utiliza para resolver problemas de maximización y minimización de Programación Lineal utilizando el método Simplex. 
 
 Problema de Maximización
 ========================
 Problema de maximización de una función objetivo lineal con restricciones:
-   :math:`\max_x c^Tx`\
+   :math:`\max_x (-c)^Tx`\
    
    :math:`S.A`\
    
    :math:`Ax\leq b`\
+  
+   :math:`x \geq 0`\
+
+   Con: 
+   
+   :math:`c,x \in \mathbb{R}^n`\
+   
+   :math:`A \in \mathbb{R}^{m \times n}`\
+   
+   :math:`b\in \mathbb{R}^m`\
+   
+Problema de Minimización
+========================
+Problema de minimización de una función objetivo lineal con restricciones:
+   :math:`\min_x c^Tx`\
+   
+   :math:`S.A`\
+   
+   :math:`Ax\geq b`\
   
    :math:`x \geq 0`\
 

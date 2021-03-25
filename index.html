@@ -33,14 +33,28 @@
             
   <div class="section" id="documentacion-del-paquete-simplex">
 <h1>Documentacion del paquete Simplex!<a class="headerlink" href="#documentacion-del-paquete-simplex" title="Permalink to this headline">¶</a></h1>
-<p>Este paquete se utiliza para resolver problemas de maximización de Programación Lineal utilizando el método Simplex.</p>
+<p>Este paquete se utiliza para resolver problemas de maximización y minimización de Programación Lineal utilizando el método Simplex.</p>
 </div>
 <div class="section" id="problema-de-maximizacion">
 <h1>Problema de Maximización<a class="headerlink" href="#problema-de-maximizacion" title="Permalink to this headline">¶</a></h1>
 <dl>
-<dt>Problema de maximización de una función objetivo lineal con restricciones:</dt><dd><p><span class="math notranslate nohighlight">\(\max_x c^Tx\)</span></p>
+<dt>Problema de maximización de una función objetivo lineal con restricciones:</dt><dd><p><span class="math notranslate nohighlight">\(\max_x (-c)^Tx\)</span></p>
 <p><span class="math notranslate nohighlight">\(S.A\)</span></p>
 <p><span class="math notranslate nohighlight">\(Ax\leq b\)</span></p>
+<p><span class="math notranslate nohighlight">\(x \geq 0\)</span></p>
+<p>Con:</p>
+<p><span class="math notranslate nohighlight">\(c,x \in \mathbb{R}^n\)</span></p>
+<p><span class="math notranslate nohighlight">\(A \in \mathbb{R}^{m \times n}\)</span></p>
+<p><span class="math notranslate nohighlight">\(b\in \mathbb{R}^m\)</span></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="problema-de-minimizacion">
+<h1>Problema de Minimización<a class="headerlink" href="#problema-de-minimizacion" title="Permalink to this headline">¶</a></h1>
+<dl>
+<dt>Problema de minimización de una función objetivo lineal con restricciones:</dt><dd><p><span class="math notranslate nohighlight">\(\min_x c^Tx\)</span></p>
+<p><span class="math notranslate nohighlight">\(S.A\)</span></p>
+<p><span class="math notranslate nohighlight">\(Ax\geq b\)</span></p>
 <p><span class="math notranslate nohighlight">\(x \geq 0\)</span></p>
 <p>Con:</p>
 <p><span class="math notranslate nohighlight">\(c,x \in \mathbb{R}^n\)</span></p>
