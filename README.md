@@ -28,7 +28,7 @@ con:
 
 ![equation](https://latex.codecogs.com/gif.latex?b\quad\epsilon\quad\mathbb{R}^{m})
 
-La documentación del paquete se encuentra [aquí.](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-yefovar/Simplex.html#module-Simplexs)
+Usamos sphynx para documentar nuestro [paquete.](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-yefovar/Simplex.html#module-Simplexs)
 
 ### Botón de binder 
 Para consultar ejemplos de implementaciones usa el boton de binder.
