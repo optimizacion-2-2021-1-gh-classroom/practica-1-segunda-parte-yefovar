@@ -119,10 +119,10 @@ class Simplex:
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
-                    lista3.append(x_B[indice])
+                    solution.append(x_B[indice])
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
-                    lista3.append(0)
+                    solution.append(0)
             
         #Solucion Simplex
         self.x = solution
