@@ -45,7 +45,6 @@ class Simplex:
         
         """
         Solves the simplex algorithm. 
-
         Returns
         -------
         :solution: Numpy array with solution
