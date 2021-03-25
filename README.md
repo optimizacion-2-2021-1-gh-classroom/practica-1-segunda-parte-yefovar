@@ -4,10 +4,10 @@ Integrantes del equipo:
 
 | usuario   | Rol               | Persona      | Actividad   |
 | --------- | ------------------| ------------|--------------|
-| jreyesgar93| Project Manager/Programación     | José        | Pruebas del software|
-| yalidt    | Programación/Revisión   | Yalidt      | Creación Dockerfile|
-| yefovar   | Programación/Documentación  | Yedam          | Implementación del algoritmo |
-| mfrubio   | Programación/Revisión        | Fernanda    | Docker actions- Docker hub|
+| jreyesgar93| Project Manager/Programación     | José        | Pruebas del software/Documentación|
+| yalidt    | Programación/Revisión   | Yalidt      | Dockerfile/Docker hub actions/ Botón Binder|
+| yefovar   | Programación/Documentación  | Yedam          | Implementación del algoritmo/Pruebas Unitarias |
+| mfrubio   | Programación/Revisión        | Fernanda    | Revisión Docker|
 
 ## Botón de binder
 
