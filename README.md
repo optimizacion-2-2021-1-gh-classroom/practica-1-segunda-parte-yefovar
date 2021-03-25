@@ -31,7 +31,7 @@ con:
 Usamos sphynx para documentar nuestro [paquete.](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-yefovar/Simplex.html#module-Simplexs)
 
 ### Botón de binder 
-Para consultar ejemplos de implementaciones usa el boton de binder.
+Para consultar ejemplos de implementaciones usa el boton de binder y el notebook para realizar el *testing* es PruebaBinder.ipynb que se encuentra en el siguiente directorio: `home/jovian/practica-1-segunda-parte-yefovar`
 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar/main?urlpath=lab)
