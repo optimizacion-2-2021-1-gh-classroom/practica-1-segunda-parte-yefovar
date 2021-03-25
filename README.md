@@ -12,7 +12,7 @@ Integrantes del equipo:
 ## Paquete Simplex
 Implementamos un paquete en Python que resuelve problemas de maximización de una función objetivo lineal con restricciones:
 
-![equation](https://latex.codecogs.com/gif.latex?max_{x}&space;\&space;c^{T}x\&space;s.a.)
+![equation](https://latex.codecogs.com/gif.latex?max_{x}&space;\&space;c^{T}x\&space) s.a.
 
 ![equation](https://latex.codecogs.com/gif.latex?Ax\leq&space;b)
 
@@ -22,7 +22,7 @@ Implementamos un paquete en Python que resuelve problemas de maximización de un
 
 ![equation](https://latex.codecogs.com/gif.latex?A\&space;\epsilon\&space;\mathbb{R}^{m\times&space;n})
 
-![equation](https://latex.codecogs.com/gif.latex?b\,&space;\epsilon&space;\,&space;\mathbb{R}^{m})
+![equation](https://latex.codecogs.com/gif.latex?b\quad\epsilon\quad\mathbb{R}^{m})
 
 
 ## Botón de binder
