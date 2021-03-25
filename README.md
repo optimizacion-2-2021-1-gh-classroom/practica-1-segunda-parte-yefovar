@@ -12,13 +12,17 @@ Integrantes del equipo:
 ## Paquete Simplex
 Implementamos un paquete en Python que resuelve problemas de maximización de una función objetivo lineal con restricciones:
 
-![equation](https://latex.codecogs.com/gif.latex?max_{x}\quad&space;c^{T}x) s.a.
+![equation](https://latex.codecogs.com/gif.latex?max_{x}\quad&space;c^{T}x) 
+
+sujeto a:
 
 ![equation](https://latex.codecogs.com/gif.latex?Ax\leq&space;b)
 
-![equation](https://latex.codecogs.com/gif.latex?x\geq&space;0) con
+![equation](https://latex.codecogs.com/gif.latex?x\geq&space;0) 
 
-![equation](https://latex.codecogs.com/gif.latex?c,x\quad\epsilon\quad\mathbb{R}^{n}
+con:
+
+![equation](https://latex.codecogs.com/gif.latex?c,x\quad\epsilon\quad\mathbb{R}^{n})
 
 ![equation](https://latex.codecogs.com/gif.latex?A\quad\epsilon\quad\mathbb{R}^{m\times&space;n})
 
