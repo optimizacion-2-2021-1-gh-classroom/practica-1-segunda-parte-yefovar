@@ -16,10 +16,9 @@ RUN apt-get update && apt-get install -y \
             
 
 #Clona el repositorio
-#RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git /home/jovyan/practica-1-segunda-parte-yefovar
 RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git 
 #Instala paquetes
-#RUN pip install /home/jovyan/practica-1-segunda-parte-yefovar/src/
+RUN pip install /home/jovyan/practica-1-segunda-parte-yefovar/src/
             
 RUN groupadd ${USER_BINDER}
 RUN useradd ${USER_BINDER} -g ${USER_BINDER} -m -s /bin/bash
