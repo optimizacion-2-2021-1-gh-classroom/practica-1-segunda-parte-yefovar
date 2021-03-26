@@ -67,3 +67,11 @@ Para consultar ejemplos de implementaciones usa el boton de binder y el notebook
 3 directories, 16 files
 ```
 
+## Evidencia trabajo AWS
+
+Se anexa evidencia de trabajo y solución del problema a través de cómputo en la nube.
+
+<img src="https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar/blob/main/images/aws%20-%201.png">
+
+<img src="https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar/blob/main/images/aws%20-%202.png">
+
