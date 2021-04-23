@@ -8,6 +8,6 @@ setup(name = 'Simplex',
       author = 'Equipo 3 MNO 2021',
       license = 'MIT',
       packages = find_packages(),
-      install_requires = ['numpy','pandas','nose']
+      install_requires = ['numpy','pandas','nose','networkx']
       )
 
