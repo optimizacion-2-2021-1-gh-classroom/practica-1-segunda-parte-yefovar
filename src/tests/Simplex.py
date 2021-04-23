@@ -124,4 +124,5 @@ class Simplex:
             
         #Solucion
         self.x = Solution
-        return Solution
+        #return Solution
+        return 'hola'
