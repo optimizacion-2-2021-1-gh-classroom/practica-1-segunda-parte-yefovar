@@ -131,4 +131,5 @@ class Simplex:
             
         #Solucion    
         self.x = solution
+        print("Hola mundo")
         return solution
