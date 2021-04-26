@@ -8,6 +8,15 @@ Documentacion del paquete Simplex!
 
 Este paquete se utiliza para resolver problemas de maximización y minimización de Programación Lineal utilizando el método Simplex. 
 
+Imagenes de Docker
+==================
+Se cuentan con dos imagenes de Docker que permiten la utilización de este paquete. 
+El paquete `yalidt/pkg_optimizacion:0.1 <https://hub.docker.com/r/yalidt/pkg_optimizacion/tags?page=1&ordering=last_updated>_.` contiene 
+un Jupyter Notebook con la paquetería instalada.
+
+Si se desea hacer uso de Kale y Kubeflow, se recomeinda instalar esta imagen `ferubio/pkg_optim_kale:0.1 <https://hub.docker.com/r/ferubio/pkg_optim_kale>_.`
+
+
 Problema de Maximización
 ========================
 Problema de maximización de una función objetivo lineal con restricciones:
