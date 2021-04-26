@@ -34,11 +34,11 @@ class Simplex:
         """
         
         if problem == 'Max':
-            self.c=-c  
+            self.c=-np.array(c) 
         else:
-            self.c=c
-        self.A=A
-        self.b=b
+            self.c=np.array(c)
+        self.A=np.array(A)
+        self.b=np.array(b)
         self.x = np.zeros(self.b.size)
         
     def solve(self):
@@ -131,5 +131,4 @@ class Simplex:
             
         #Solucion    
         self.x = solution
-        print("Hola mundo")
         return solution
