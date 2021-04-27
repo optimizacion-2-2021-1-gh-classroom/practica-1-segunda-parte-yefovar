@@ -50,10 +50,10 @@ class Simplex:
         :solution: Numpy array with solution
 
         """
-        costo = self.c
         c_N = self.c
         A = self.A
         b = self.b
+        costo = np.copy(c_N)
       
         n_c_N = c_N.size
         n_A = np.size(A,0)
@@ -90,7 +90,7 @@ class Simplex:
             
             for indice in range(0,n_b):
                 if d[indice]<=0:
-                    lista2.append(np.nan)
+a                    lista2.append(np.nan)
                 else:
                     lista2.append(x_B[indice]/d[indice])
             
