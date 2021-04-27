@@ -50,6 +50,7 @@ class Simplex:
         :solution: Numpy array with solution
 
         """
+        costo = self.c
         c_N = self.c
         A = self.A
         b = self.b
@@ -137,7 +138,7 @@ class Simplex:
         n = len(solution)
         opt = 0
         for i in range(n):
-            opt += solution[i]* c[i]
+            opt += solution[i]* costo[i]
         print(opt) #CH
         status = 0
             
