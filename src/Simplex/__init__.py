@@ -1,4 +1,3 @@
-
 import numpy as np
 
 class Simplex:
@@ -36,10 +35,11 @@ class Simplex:
         if problem == 'Max':
             self.c=-np.array(c) 
         else:
-            self.c=np.array(c)
-        self.A=np.array(A)
-        self.b=np.array(b)
+            self.c= np.array(c)  
+        self.A=np.array(A)   
+        self.b=np.array(b)  
         self.x = np.zeros(self.b.size)
+        self.problem = problem
         
     def solve(self):
         
@@ -50,9 +50,11 @@ class Simplex:
         :solution: Numpy array with solution
 
         """
+        problem = self.problem
         c_N = self.c
         A = self.A
         b = self.b
+        status = []
         costo = np.copy(c_N)
       
         n_c_N = c_N.size
@@ -70,7 +72,6 @@ class Simplex:
         
         N_list_idx = list(range(0,n_c_N))
         B_list_idx = list(range(n_c_N,n_A_))
-        
         
         nu = np.zeros(n_b)
         
@@ -90,7 +91,7 @@ class Simplex:
             
             for indice in range(0,n_b):
                 if d[indice]<=0:
-a                    lista2.append(np.nan)
+                    lista2.append(np.nan)
                 else:
                     lista2.append(x_B[indice]/d[indice])
             
@@ -118,7 +119,7 @@ a                    lista2.append(np.nan)
                 lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]]))
                 i = i + 1
             idx_x_N = lista.index(max(lista))
-
+        
         solution = []
 
         for indice in range(0,n_c_N):
@@ -128,18 +129,18 @@ a                    lista2.append(np.nan)
                     solution.append(x_B[indice])
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
-                    solution.append(0)
-        
-        print("Optimization completed successfully !")
-        print("Solution for x vector:")
+                    solution.append(0) 
+            
+        print("Optimization completed successfully !") 
+        print("Solution for x vector:") 
         self.x = solution
-        print(solution)
-        print("Optimal value:")
-        n = len(solution)
-        opt = 0
-        for i in range(n):
-            opt += solution[i]* costo[i]
-        print(opt) #CH
+        print(solution) 
+        print("Optimal value:") 
+        n = len(solution) 
+        opt = 0   
+        for i in range(n): 
+            opt += solution[i]* costo[i] 
+        print(opt) 
         status = 0
             
         #Solucion    
