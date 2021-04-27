@@ -128,7 +128,19 @@ class Simplex:
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
                     solution.append(0)
+        
+        print("Optimization completed successfully !")
+        print("Solution for x vector:")
+        self.x = solution
+        print(solution)
+        print("Optimal value:")
+        n = len(solution)
+        opt = 0
+        for i in range(n):
+            opt += solution[i]* c[i]
+        print(opt) #CH
+        status = 0
             
         #Solucion    
         self.x = solution
-        return solution
+        return solution, opt, status
