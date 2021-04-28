@@ -36,6 +36,30 @@ y=value(y)
 
 pulp_result = np.array([x,y])
 
+##cvxpy
+
+x = cp.Variable(boolean=False, integer= False)
+y = cp.Variable(boolean=False, integer= False)
+
+
+constraints = [0 <= cp.sum(x),
+               0 <= cp.sum(y),
+               cp.sum(x)<=4,
+               cp.sum(2*y)<=12,
+               cp.sum(3*x+2*y)<=18
+               ]
+
+model = cp.Maximize(cp.sum(3*x+5*y))
+
+prob = cp.Problem(model, constraints)
+
+result = prob.solve()
+
+x=x.value
+y=y.value
+
+cvxpy_result = np.array([x,y])
+
 ##Simplex
 
 problema = Simplex(c,A,b,problem='Max')
@@ -48,6 +72,7 @@ print('Test con paqueteria pulp')
 print(method_result== approx(pulp_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria cvxpy')
+print(method_result== approx(cvxpy_result, abs=1e-8, rel=1e-8))
 
 #Minimization case
 
