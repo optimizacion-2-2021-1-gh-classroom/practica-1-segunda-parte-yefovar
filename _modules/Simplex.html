@@ -32,8 +32,7 @@
           <div class="body" role="main">
             
   <h1>Source code for Simplex</h1><div class="highlight"><pre>
-<span></span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <div class="viewcode-block" id="Simplex"><a class="viewcode-back" href="../Simplex.html#Simplex.Simplex">[docs]</a><span class="k">class</span> <span class="nc">Simplex</span><span class="p">:</span>
     
@@ -70,10 +69,11 @@
         <span class="k">if</span> <span class="n">problem</span> <span class="o">==</span> <span class="s1">&#39;Max&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
         
 <div class="viewcode-block" id="Simplex.solve"><a class="viewcode-back" href="../Simplex.html#Simplex.Simplex.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         
@@ -84,9 +84,12 @@
 <span class="sd">        :solution: Numpy array with solution</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">problem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span>
         <span class="n">c_N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span>
         <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">costo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">c_N</span><span class="p">)</span>
       
         <span class="n">n_c_N</span> <span class="o">=</span> <span class="n">c_N</span><span class="o">.</span><span class="n">size</span>
         <span class="n">n_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -103,7 +106,6 @@
         
         <span class="n">N_list_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_c_N</span><span class="p">))</span>
         <span class="n">B_list_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_c_N</span><span class="p">,</span><span class="n">n_A_</span><span class="p">))</span>
-        
         
         <span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_b</span><span class="p">)</span>
         
@@ -126,6 +128,10 @@
                     <span class="n">lista2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">lista2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
+                    
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">lista2</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>  
+                <span class="n">status</span> <span class="o">=</span> <span class="mi">3</span>    
+                <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;simplex method failed, unbounded solution&quot;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
             
             <span class="n">idx_x_B</span> <span class="o">=</span> <span class="n">lista2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lista2</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lista2</span><span class="p">)]))</span>
             
@@ -151,7 +157,7 @@
                 <span class="n">lista</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="o">-</span><span class="n">lambda_</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">nu</span><span class="p">,</span> <span class="n">A</span><span class="p">[:,</span> <span class="n">N_list_idx</span><span class="p">[</span><span class="n">i</span><span class="p">]]))</span>
                 <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="n">idx_x_N</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
-
+        
         <span class="n">solution</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_c_N</span><span class="p">):</span>
@@ -161,11 +167,23 @@
                     <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
                     <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="k">elif</span> <span class="p">(</span><span class="n">indice2</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">B_list_idx</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+            
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimization completed successfully !&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution for x vector:&quot;</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal value:&quot;</span><span class="p">)</span> 
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
+        <span class="n">opt</span> <span class="o">=</span> <span class="mi">0</span>   
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+            <span class="n">opt</span> <span class="o">+=</span> <span class="n">solution</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span> <span class="n">costo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span> 
+        <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
             
         <span class="c1">#Solucion    </span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>
-        <span class="k">return</span> <span class="n">solution</span></div></div>
+        <span class="k">return</span> <span class="n">solution</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">status</span></div></div>
 </pre></div>
 
           </div>
