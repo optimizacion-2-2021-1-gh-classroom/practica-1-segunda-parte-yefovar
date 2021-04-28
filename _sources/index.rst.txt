@@ -16,12 +16,7 @@ un Jupyter Notebook con la paquetería instalada.
 
 Si se desea hacer uso de Kale y Kubeflow, se recomeinda instalar esta imagen `ferubio/pkg_optim_kale:0.1 <https://hub.docker.com/r/ferubio/pkg_optim_kale>`_
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 
 Problema de Maximización
@@ -61,6 +56,13 @@ Problema de minimización de una función objetivo lineal con restricciones:
    :math:`A \in \mathbb{R}^{m \times n}`\
    
    :math:`b\in \mathbb{R}^m`\
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
 .. toctree::
    :maxdepth: 2
