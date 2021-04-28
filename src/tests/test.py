@@ -123,7 +123,7 @@ constraints = [0 <= cp.sum(x),
                cp.sum(-x+y+z)<=4
                ]
 
-model = cp.Maximize(cp.sum(1*x+1*y-4*z))
+model = cp.Minimize(cp.sum(1*x+1*y-4*z))
 
 prob = cp.Problem(model, constraints)
 
