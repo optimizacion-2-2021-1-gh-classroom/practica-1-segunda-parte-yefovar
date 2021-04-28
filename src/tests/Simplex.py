@@ -134,6 +134,7 @@ class Simplex:
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
                     solution.append(0) 
             
+
         #print("Optimization completed successfully !") 
         #print("Solution for x vector:") 
         self.x = solution
@@ -143,7 +144,9 @@ class Simplex:
         opt = 0   
         for i in range(n): 
             opt += solution[i]* costo[i] 
+            
         #print(opt) 
+
         status = 0
             
         #Solucion    
