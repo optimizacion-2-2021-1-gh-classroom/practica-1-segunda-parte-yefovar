@@ -11,29 +11,35 @@ class Simplex:
         Creates variables associated to the linear programing problem
         
         :type c: numpy 1D array
-        :param c: array asociated with the cost or coefficients of lineal objective function. 
+        :param c: array asociated with the cost or coefficients of 
+                    lineal objective function. 
         
         :type A:  numpy NxM array
-        :param A: Matrix associated to the linear restrictions for the objective function. 
+        :param A: Matrix associated to the linear restrictions for
+                    the objective function. 
         
         :type b:  numpy 1XM array
-        :param b: array asociated with constraints to the linear restrictions for the objective function.
+        :param b: array asociated with constraints to the linear 
+                    restrictions for the objective function.
         
         :type problem: str
-        :param problem: definition of maximization ('Max') or minimization ('Min') problem.
+        :param problem: definition of maximization ('Max') or 
+                        minimization ('Min') problem.
         
         :type x:  numpy 1D array
-        :param x: array of solution vector once the solve method is applied. 
+        :param x: array of solution vector once the 
+                    solve method is applied. 
         
         """
         
         if problem == 'Max':
-            self.c=-c  
+            self.c=-np.array(c) 
         else:
-            self.c=c
-        self.A=A
-        self.b=b
+            self.c= np.array(c)  
+        self.A=np.array(A)   
+        self.b=np.array(b)  
         self.x = np.zeros(self.b.size)
+        self.problem = problem
         
     def solve(self):
         
@@ -41,11 +47,14 @@ class Simplex:
         Solves the simplex algorithm. 
         Returns
         -------
-        : x_B : Numpy array with solution
+        :solution: Numpy array with solution
         """
+        problem = self.problem
         c_N = self.c
         A = self.A
         b = self.b
+        status = []
+        costo = np.copy(c_N)
       
         n_c_N = c_N.size
         n_A = np.size(A,0)
@@ -62,7 +71,6 @@ class Simplex:
         
         N_list_idx = list(range(0,n_c_N))
         B_list_idx = list(range(n_c_N,n_A_))
-        
         
         nu = np.zeros(n_b)
         
@@ -85,6 +93,10 @@ class Simplex:
                     lista2.append(np.nan)
                 else:
                     lista2.append(x_B[indice]/d[indice])
+                    
+            if np.isnan(lista2).all() == True:  
+                status = 3    
+                return ("simplex method failed, unbounded solution",-1, status)
             
             idx_x_B = lista2.index(min(np.array(lista2)[np.isfinite(lista2)]))
             
@@ -110,19 +122,30 @@ class Simplex:
                 lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]]))
                 i = i + 1
             idx_x_N = lista.index(max(lista))
-
-        Solution = []
+        
+        solution = []
 
         for indice in range(0,n_c_N):
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
-                    Solution.append(x_B[indice])
+                    solution.append(x_B[indice])
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
-                    Solution.append(0)
+                    solution.append(0) 
             
-        #Solucion
-        self.x = Solution
-        #return Solution
-        return 'hola'
+        print("Optimization completed successfully !") 
+        print("Solution for x vector:") 
+        self.x = solution
+        print(solution) 
+        print("Optimal value:") 
+        n = len(solution) 
+        opt = 0   
+        for i in range(n): 
+            opt += solution[i]* costo[i] 
+        print(opt) 
+        status = 0
+            
+        #Solucion    
+        self.x = solution
+        return solution, opt, status
