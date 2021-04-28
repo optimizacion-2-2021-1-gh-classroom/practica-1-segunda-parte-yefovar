@@ -2,8 +2,11 @@ from Simplex import *
 from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
+from pulp import *
 
 #Maximization case
+
+##Scipy
 
 c = np.array([3, 5])
 b = np.array([4, 12, 18])
@@ -15,13 +18,23 @@ opt = linprog(c=-c, A_ub=A, b_ub=b,
               method="simplex")
 python_result = opt.x
 
+##Pulp
+
+##Simplex
+
 problema = Simplex(c,A,b,problem='Max')
 method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
 print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
 
+print('Test con paqueteria pulp')
+
+print('Test con paqueteria cvxpy')
+
 #Minimization case
+
+##Scipy
 
 c = np.array([1, 1, -4])
 b = np.array([9, 2, 4])
@@ -33,8 +46,16 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
               method="simplex")
 python_result = opt.x
 
+##Pulp
+
+##Simplex
+
 problema = Simplex(c,A,b,problem='Min')
 method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
 print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
+
+print('Test con paqueteria pulp')
+
+print('Test con paqueteria cvxpy')
