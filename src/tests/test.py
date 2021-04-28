@@ -96,8 +96,8 @@ z = LpVariable('z',0)
 
 prob = LpProblem('myProblem',LpMinimize)
 
-prob += 1*x + 1*y +1*z <= 9
-prob += 1*x + 1*y +1*z <= 2
+prob += 1*x + 1*y +2*z <= 9
+prob += 1*x + 1*y -1*z <= 2
 prob += -1*x + 1*y +1*z <= 4
 prob += 1*x +1*y -4*z
 
@@ -107,6 +107,33 @@ y=value(y)
 z=value(z)
 
 pulp_result = np.array([x,y,z])
+
+##cvxpy
+
+x = cp.Variable(boolean=False, integer= False)
+y = cp.Variable(boolean=False, integer= False)
+z = cp.Variable(boolean=False, integer= False)
+
+
+constraints = [0 <= cp.sum(x),
+               0 <= cp.sum(y),
+               0 <= cp.sum(z),
+               cp.sum(x+y+2*z)<=9,
+               cp.sum(x+y-z)<=2,
+               cp.sum(-x+y+z)<=4
+               ]
+
+model = cp.Maximize(cp.sum(1*x+1*y-4*z))
+
+prob = cp.Problem(model, constraints)
+
+result = prob.solve()
+
+x=x.value
+y=y.value
+z=z.value
+
+cvxpy_result = np.array([x,y,z])
 
 ##Simplex
 
@@ -120,3 +147,4 @@ print('Test con paqueteria pulp')
 print(method_result== approx(pulp_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria cvxpy')
+print(method_result== approx(cvxpy_result, abs=1e-6, rel=1e-6))
