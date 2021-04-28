@@ -94,6 +94,10 @@ class Simplex:
                     lista2.append(np.nan)
                 else:
                     lista2.append(x_B[indice]/d[indice])
+                    
+            if np.isnan(lista2).all() == True:  
+                status = 3    
+                return ("simplex method failed, unbounded solution",-1, status)
             
             idx_x_B = lista2.index(min(np.array(lista2)[np.isfinite(lista2)]))
             
