@@ -16,9 +16,25 @@ A = np.array([[1,  0],
 
 opt = linprog(c=-c, A_ub=A, b_ub=b,
               method="simplex")
-python_result = opt.x
+scipy_result = opt.x
 
 ##Pulp
+
+x = LpVariable('x',0)
+y = LpVariable('y',0)
+
+prob = LpProblem('myProblem',LpMinimize)
+
+prob += 1*x + 0*y <= 4
+prob += 0*x + 2*y <= 12
+prob += 3*x + 2*y <= 18
+prob += -3*x -5*y
+
+status = prob.solve()
+x=value(x)
+y=value(y)
+
+pulp_result = np.array([x,y])
 
 ##Simplex
 
@@ -26,9 +42,10 @@ problema = Simplex(c,A,b,problem='Max')
 method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
-print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
+print(method_result== approx(scipy_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria pulp')
+print(method_result== approx(pulp_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria cvxpy')
 
@@ -44,7 +61,7 @@ A = np.array([[1,  1,  2],
 
 opt = linprog(c=c, A_ub=A, b_ub=b,
               method="simplex")
-python_result = opt.x
+scipy_result = opt.x
 
 ##Pulp
 
@@ -54,7 +71,7 @@ problema = Simplex(c,A,b,problem='Min')
 method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
-print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
+print(method_result== approx(scipy_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria pulp')
 
