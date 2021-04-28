@@ -73,7 +73,7 @@ print('Test con paqueteria pulp')
 print(method_result== approx(pulp_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria cvxpy')
-print(method_result== approx(cvxpy_result, abs=1e-8, rel=1e-8))
+print(method_result== approx(cvxpy_result, abs=1e-6, rel=1e-6))
 
 #Minimization case
 
