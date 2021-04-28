@@ -16,7 +16,7 @@ opt = linprog(c=-c, A_ub=A, b_ub=b,
 python_result = opt.x
 
 problema = Simplex(c,A,b,problem='Max')
-method_result = problema.solve()
+method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
 print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
@@ -34,7 +34,7 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
 python_result = opt.x
 
 problema = Simplex(c,A,b,problem='Min')
-method_result = problema.solve()
+method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
 print(method_result== approx(python_result, abs=1e-8, rel=1e-8))
