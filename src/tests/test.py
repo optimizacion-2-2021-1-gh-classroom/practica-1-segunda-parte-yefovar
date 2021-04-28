@@ -3,6 +3,7 @@ from scipy.optimize import linprog
 from pytest import approx
 import numpy as np
 from pulp import *
+import cvxpy as cp
 
 #Maximization case
 
