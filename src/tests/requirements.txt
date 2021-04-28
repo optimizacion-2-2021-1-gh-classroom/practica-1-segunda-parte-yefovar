@@ -3,3 +3,5 @@
 numpy
 pytest
 scipy
+pulp
+cvxpy
