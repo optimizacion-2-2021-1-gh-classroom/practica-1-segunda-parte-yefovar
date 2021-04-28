@@ -64,6 +64,23 @@ opt = linprog(c=c, A_ub=A, b_ub=b,
 scipy_result = opt.x
 
 ##Pulp
+x = LpVariable('x',0)
+y = LpVariable('y',0)
+z = LpVariable('z',0)
+
+prob = LpProblem('myProblem',LpMinimize)
+
+prob += 1*x + 1*y +1*z <= 9
+prob += 1*x + 1*y +1*z <= 2
+prob += -1*x + 1*y +1*z <= 4
+prob += 1*x +1*y -4*z
+
+status = prob.solve()
+x=value(x)
+y=value(y)
+z=value(z)
+
+pulp_result = np.array([x,y,z])
 
 ##Simplex
 
@@ -74,5 +91,6 @@ print('Test con paqueteria scipy')
 print(method_result== approx(scipy_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria pulp')
+print(method_result== approx(pulp_result, abs=1e-8, rel=1e-8))
 
 print('Test con paqueteria cvxpy')
