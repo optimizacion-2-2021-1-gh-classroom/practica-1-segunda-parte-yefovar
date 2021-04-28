@@ -30,7 +30,7 @@ prob += 0*x + 2*y <= 12
 prob += 3*x + 2*y <= 18
 prob += -3*x -5*y
 
-status = prob.solve()
+status = prob.solve(PULP_CBC_CMD(msg=0))
 x=value(x)
 y=value(y)
 
@@ -75,7 +75,7 @@ prob += 1*x + 1*y +1*z <= 2
 prob += -1*x + 1*y +1*z <= 4
 prob += 1*x +1*y -4*z
 
-status = prob.solve()
+status = prob.solve(PULP_CBC_CMD(msg=0))
 x=value(x)
 y=value(y)
 z=value(z)
