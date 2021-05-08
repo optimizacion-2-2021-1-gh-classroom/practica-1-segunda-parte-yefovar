@@ -5,3 +5,4 @@ Simplex
    :maxdepth: 4
 
    Simplex
+   SimplexC
