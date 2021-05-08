@@ -7,7 +7,7 @@ import os
 
 setup(name = 'Simplex',
       version = '0.1',
-      description = ' PAckage to solve Linear Programming problems using Simplex Algorithm',
+      description = ' Package to solve Linear Programming problems using Simplex Algorithm',
       url = '',
       author = 'Equipo 3 MNO 2021',
       license = 'MIT',
