@@ -3,4 +3,4 @@ pytest
 scipy
 pulp
 cvxpy
-Cython
+cython
