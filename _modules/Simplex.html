@@ -40,7 +40,7 @@
 <span class="sd">    This class creates a simplex solver for linear programming.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">A</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">problem</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">A</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">problem</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates variables associated to the linear programing problem</span>
 <span class="sd">        </span>
@@ -74,6 +74,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
         
 <div class="viewcode-block" id="Simplex.solve"><a class="viewcode-back" href="../Simplex.html#Simplex.Simplex.solve">[docs]</a>    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         
@@ -85,6 +86,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">problem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem</span>
+        <span class="n">verbose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span>
         <span class="n">c_N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span>
         <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span>
         <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
@@ -95,7 +97,7 @@
         <span class="n">n_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">identity_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n_A</span><span class="p">)</span>
         <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n_A</span><span class="p">)</span>
-        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="n">identity_A</span><span class="p">]</span>
+        <span class="n">A</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">identity_A</span><span class="p">))</span>
         
         <span class="n">n_b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">size</span>
         <span class="n">x_B</span> <span class="o">=</span> <span class="n">b</span>
@@ -164,22 +166,27 @@
             <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
             <span class="k">for</span> <span class="n">indice2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">B_list_idx</span><span class="p">)):</span>
                 <span class="k">if</span> <span class="n">B_list_idx</span><span class="p">[</span><span class="n">indice2</span><span class="p">]</span> <span class="o">==</span> <span class="n">indice</span><span class="p">:</span>
-                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
+                    <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_B</span><span class="p">[</span><span class="n">indice2</span><span class="p">])</span>
                     <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="k">elif</span> <span class="p">(</span><span class="n">indice2</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">B_list_idx</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
                     <span class="n">solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
-            
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimization completed successfully !&quot;</span><span class="p">)</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution for x vector:&quot;</span><span class="p">)</span> 
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal value:&quot;</span><span class="p">)</span> 
-        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
-        <span class="n">opt</span> <span class="o">=</span> <span class="mi">0</span>   
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
-            <span class="n">opt</span> <span class="o">+=</span> <span class="n">solution</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span> <span class="n">costo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span> 
+                    
+        <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimization completed successfully !&quot;</span><span class="p">)</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution for x vector:&quot;</span><span class="p">)</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
+        
         <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
+        <span class="n">opt</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">opt</span> <span class="o">+=</span> <span class="n">solution</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span> <span class="n">costo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal value:&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
+            
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution for x vector, optimization value and status:&quot;</span><span class="p">)</span>
             
         <span class="c1">#Solucion    </span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">solution</span>

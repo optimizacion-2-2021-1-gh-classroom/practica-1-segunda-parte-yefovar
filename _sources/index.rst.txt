@@ -7,6 +7,7 @@ Documentacion del paquete Simplex!
 ===================================
 
 Este paquete se utiliza para resolver problemas de maximización y minimización de Programación Lineal utilizando el método Simplex. 
+Además incluye un modulo compilado en C con Cython para mayor velocidad.
 
 Imagenes de Docker
 ==================
