@@ -61,7 +61,7 @@ class Simplex:
         n_A = np.size(A,0)
         identity_A = np.eye(n_A)
         B = np.eye(n_A)
-        A = np.c_[A,identity_A]
+        A= np.hstack((A,identity_A))
         
         n_b = b.size
         x_B = b
