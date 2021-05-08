@@ -1,5 +1,5 @@
-
-from setuptools import setup, find_packages
+from distutils.core import setup
+from setuptools import find_packages
  
 setup(name = 'Simplex',
       version = '0.1',
@@ -8,6 +8,7 @@ setup(name = 'Simplex',
       author = 'Equipo 3 MNO 2021',
       license = 'MIT',
       packages = find_packages(),
-      install_requires = ['numpy','pandas','networkx']
+      install_requires = ['numpy','pandas','cython'],
+      ext_modules = [Extension('SimplexC',['SimplexC/__init__.c'])]
       )
 
