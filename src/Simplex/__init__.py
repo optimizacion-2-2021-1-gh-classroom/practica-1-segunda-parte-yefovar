@@ -6,7 +6,7 @@ class Simplex:
     This class creates a simplex solver for linear programming.
     """
     
-    def __init__(self,c = None,A = None ,b = None, problem = None, verbose = None)):
+    def __init__(self,c = None,A = None ,b = None, problem = None, verbose = None):
         """
         Creates variables associated to the linear programing problem
         
