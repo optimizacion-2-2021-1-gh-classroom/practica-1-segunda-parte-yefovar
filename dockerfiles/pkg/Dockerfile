@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git 
 #Instala paquetes necesario
 RUN pip install Cython
-COPY src/*
+COPY src/* $PWD
 
 #RUN cd practica-1-segunda-parte-yefovar/src/
 #RUN python3 setup.py build_ext --inplace
