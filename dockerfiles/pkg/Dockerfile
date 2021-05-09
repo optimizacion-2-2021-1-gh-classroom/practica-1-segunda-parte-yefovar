@@ -23,7 +23,7 @@ RUN pip install Cython
 
 RUN cd practica-1-segunda-parte-yefovar/src/
 RUN pwd
-RUN python3 setup.py build_ext --inplace
+RUN python3 src/setup.py build_ext --inplace
 RUN cd ..
 RUN cd .. 
 RUN pip install practica-1-segunda-parte-yefovar/src/
