@@ -1,6 +1,6 @@
 name: Test con pytest
 on:
-  workflow_dispatch
+  [push, workflow_dispatch]
   #[push]
 
 jobs:
