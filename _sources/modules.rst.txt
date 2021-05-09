@@ -2,7 +2,7 @@ Simplex
 =======
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    Simplex
    SimplexC
