@@ -30,6 +30,7 @@ con:
 
 Usamos sphynx para documentar nuestro [paquete.](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-yefovar/Simplex.html#module-Simplexs)
 
+Además cuenta con un módulo con código optimizado en C llamado SimplexC
 ### Botón de binder 
 Para consultar ejemplos de implementaciones usa el boton de binder y el notebook para realizar el *testing* es PruebaBinder.ipynb que se encuentra en el siguiente directorio: `home/jovian/practica-1-segunda-parte-yefovar`
 
@@ -39,32 +40,46 @@ Para consultar ejemplos de implementaciones usa el boton de binder y el notebook
 ## Organización del repositorio
 
 ```bash
-    .
-    ├── README.md
-    ├── dockerfiles     
-    │   └── pkg
-    │   	└── Dockerfile
-    ├── src     
-    │   ├── Simplex
-    │   │	└── __init__.py
-    │   ├── docs
-    │   │	├── Makefile
-    │   │   ├── Simplex.rst
-    │   │   ├── conf.py
-    │   │   ├── index.rst
-    │   │   ├── make.bat
-    │   │   └── modules.rst
-    │   ├── test
-    │   │   ├── Simplex.py
-    │   │   ├── requirements.txt
-    │   │   └── test.py
-    │   └── setup.py
-    ├── Dockerfile
-    ├── PruebaBinder.ipynb
-    ├── instrucciones.ipynb
-    └── old_README.md
+   practica-1-segunda-parte-yefovar/
+├── 3_parte_2_practica_1.ipynb
+├── Dockerfile
+├── README.md
+├── dockerfiles
+│   └── pkg
+│       └── Dockerfile
+├── instrucciones.ipynb
+├── old_README.md
+├── requirements.txt
+└── src
+    ├── Simplex
+    │   └── __init__.py
+    ├── SimplexC
+    │   ├── __init__.c
+    │   ├── __init__.cpython-39-x86_64-linux-gnu.so
+    │   ├── __init__.html
+    │   └── __init__.pyx
+    ├── build
+    │   ├── lib.linux-x86_64-3.9
+    │   │   └── SimplexC
+    │   │       └── __init__.cpython-39-x86_64-linux-gnu.so
+    │   └── temp.linux-x86_64-3.9
+    │       └── SimplexC
+    │           └── __init__.o
+    ├── docs
+    │   ├── Makefile
+    │   ├── Simplex.rst
+    │   ├── SimplexC.rst
+    │   ├── conf.py
+    │   ├── index.rst
+    │   ├── make.bat
+    │   └── modules.rst
+    ├── setup.py
+    └── tests
+        ├── requirements.txt
+        ├── test.py
+        └── tests_simpexc.py
 
-3 directories, 16 files
+13 directories, 27 files
 ```
 
 ## Evidencia trabajo AWS
