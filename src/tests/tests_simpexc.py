@@ -63,7 +63,7 @@ cvxpy_result = np.array([x,y])
 
 ##Simplex
 
-problema = Simplex(c,A,b,problem='Max')
+problema = SimplexC.Simplex(c,A,b,problem='Max')
 method_result,opt,status = problema.solve()
 
 print('Test con paqueteria scipy')
