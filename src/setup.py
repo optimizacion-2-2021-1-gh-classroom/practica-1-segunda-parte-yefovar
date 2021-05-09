@@ -13,6 +13,6 @@ setup(name = 'Simplex',
       license = 'MIT',
       packages = find_packages(),
       install_requires = ['numpy','pandas','Cython'],
-      ext_modules = cythonize("SimplexC/__init__.pyx")
+      ext_modules = cythonize("SimplexC/__init__.pyx",compiler_directives={'language_level' : 3,"embedsignature": True}) 
       )
 

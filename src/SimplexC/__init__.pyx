@@ -6,7 +6,7 @@ class Simplex:
     This class creates a simplex solver for linear programming.
     """
     
-    def __init__(self,c = None,A = None ,b = None, problem = None):
+    def __init__(self,c = None,A = None ,b = None, problem = None, verbose = None):
         """
         Creates variables associated to the linear programing problem
         
@@ -40,6 +40,7 @@ class Simplex:
         self.b=np.array(b)  
         self.x = np.zeros(self.b.size)
         self.problem = problem
+        self.verbose = verbose
         
     def solve(self):
         
@@ -48,9 +49,9 @@ class Simplex:
         Returns
         -------
         :solution: Numpy array with solution
-
         """
         problem = self.problem
+        verbose = self.verbose
         c_N = self.c
         A = self.A
         b = self.b
@@ -61,7 +62,7 @@ class Simplex:
         n_A = np.size(A,0)
         identity_A = np.eye(n_A)
         B = np.eye(n_A)
-        A = np.c_[A,identity_A]
+        A= np.hstack((A,identity_A))
         
         n_b = b.size
         x_B = b
@@ -130,22 +131,27 @@ class Simplex:
             j=0
             for indice2 in range(0,len(B_list_idx)):
                 if B_list_idx[indice2] == indice:
-                    solution.append(x_B[indice])
+                    solution.append(x_B[indice2])
                     j = j + 1
                 elif (indice2 == len(B_list_idx) - 1 and j == 0):
                     solution.append(0) 
-            
-        print("Optimization completed successfully !") 
-        print("Solution for x vector:") 
-        self.x = solution
-        print(solution) 
-        print("Optimal value:") 
-        n = len(solution) 
-        opt = 0   
-        for i in range(n): 
-            opt += solution[i]* costo[i] 
-        print(opt) 
+                    
+        if verbose == True:
+            print("Optimization completed successfully !") 
+            print("Solution for x vector:") 
+            self.x = solution
+            print(solution) 
+        
         status = 0
+        n = len(solution)
+        opt = 0
+        for i in range(n):
+            opt += solution[i]* costo[i]
+        if verbose == True:
+            print("Optimal value:")
+            print(opt)
+            
+        print("Solution for x vector, optimization value and status:")
             
         #Solucion    
         self.x = solution
