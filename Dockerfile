@@ -20,7 +20,7 @@ RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-s
 #Instala paquetes necesario
 RUN pip install Cython
 RUN apt-get install -y libopenblas-dev 
-RUN pip install numpy --no-binary
+
 
 #RUN cd practica-1-segunda-parte-yefovar/src/
 #RUN python3 setup.py build_ext --inplace
@@ -30,7 +30,7 @@ RUN pip install -q git+"git://github.com/optimizacion-2-2021-1-gh-classroom/prac
 
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt            
-
+RUN pip install numpy==1.19.3 --no-binary numpy --force-reinstall
 RUN groupadd ${USER_BINDER}
 RUN useradd ${USER_BINDER} -g ${USER_BINDER} -m -s /bin/bash
 RUN echo 'jovyan ALL=(ALL:ALL) NOPASSWD:ALL' | (EDITOR='tee -a' visudo)
