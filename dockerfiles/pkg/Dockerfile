@@ -20,13 +20,13 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git 
 #Instala paquetes necesario
 RUN pip install Cython
-COPY practica-1-segunda-parte-yefovar/src/* $PWD
+
 
 #RUN cd practica-1-segunda-parte-yefovar/src/
 #RUN python3 setup.py build_ext --inplace
 
 
-RUN pip install .
+RUN pip install -q git+"git://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-yefovar.git#subdirectory=src"
 
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt            
