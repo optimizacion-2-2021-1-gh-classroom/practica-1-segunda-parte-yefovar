@@ -20,6 +20,7 @@ RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-s
 #Instala paquetes necesario
 RUN pip install Cython
 RUN apt-get install -y libopenblas-dev 
+RUN pip install numpy --no-binary
 
 #RUN cd practica-1-segunda-parte-yefovar/src/
 #RUN python3 setup.py build_ext --inplace
