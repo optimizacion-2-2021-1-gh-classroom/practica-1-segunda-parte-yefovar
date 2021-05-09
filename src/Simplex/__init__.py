@@ -81,7 +81,7 @@ class Simplex:
         i = 0
         
         for lambda_ in c_N:
-            lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]])) 
+            lista.append (-lambda_ + nu@A[:, N_list_idx[i]]) ##Adding blas optimization
             i = i + 1
         
         idx_x_N = lista.index(max(lista))
@@ -122,7 +122,7 @@ class Simplex:
             lista = []
             i = 0
             for lambda_ in c_N:
-                lista.append (-lambda_ + np.dot(nu, A[:, N_list_idx[i]]))
+                lista.append (-lambda_ + nu@A[:, N_list_idx[i]]) ###adding blas optimization
                 i = i + 1
             idx_x_N = lista.index(max(lista))
         
@@ -147,7 +147,7 @@ class Simplex:
         n = len(solution)
         opt = 0
         for i in range(n):
-            opt += solution[i]* costo[i]
+            opt += solution[i]* costo[i] ###Blas optimization
         if verbose == True:
             print("Optimal value:")
             print(opt)
