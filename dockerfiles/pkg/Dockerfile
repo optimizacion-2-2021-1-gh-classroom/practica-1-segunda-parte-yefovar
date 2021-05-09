@@ -21,11 +21,11 @@ RUN git clone https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-s
 #Instala paquetes necesario
 RUN pip install Cython
 
-RUN cd practica-1-segunda-parte-yefovar/src/
-RUN pwd
-RUN python3 src/setup.py build_ext --inplace
-RUN cd ..
-RUN cd .. 
+
+
+RUN python3 setup.py build_ext --inplace
+
+
 RUN pip install practica-1-segunda-parte-yefovar/src/
 
 COPY requirements.txt .
