@@ -21,4 +21,4 @@ jobs:
       - name: Test for Simplex
         run: python src/tests/test.py
       - name: Test for SimplexC
-        run: python src/tests/test.py
+        run: python src/tests/tests_simpexc.py
