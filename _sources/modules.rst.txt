@@ -1,4 +1,4 @@
-Simplex
+Modules
 =======
 
 .. toctree::
