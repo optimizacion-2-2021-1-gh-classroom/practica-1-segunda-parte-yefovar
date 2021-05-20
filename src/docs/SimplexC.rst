@@ -12,6 +12,3 @@ Functions and Classes
 ================================
 .. automodule:: SimplexC
 .. autosummary::
-   :toctree: ../_autosummary
-   SimplexC/__init__.pyx
-   SimplexC/__init__.c
