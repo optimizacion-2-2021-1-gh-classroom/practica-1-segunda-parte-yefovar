@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentacion del paquete Simplex!
+Documentación del paquete Simplex!
 ===================================
 
 Este paquete se utiliza para resolver problemas de maximización y minimización de Programación Lineal utilizando el método Simplex.
 Además incluye un modulo compilado en C con Cython para mayor velocidad.
 
-Imagenes de Docker
+Imágenes de Docker
 ==================
 Se cuentan con dos imagenes de Docker que permiten la utilización de este paquete. 
 El paquete `yalidt/pkg_optimizacion:0.1 <https://hub.docker.com/r/yalidt/pkg_optimizacion/tags?page=1&ordering=last_updated>`_ contiene 
