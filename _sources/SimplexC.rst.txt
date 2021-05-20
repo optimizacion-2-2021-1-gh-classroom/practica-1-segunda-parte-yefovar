@@ -3,7 +3,7 @@ SimplexC package
 
 Module contents
 ---------------
-.. automodule:: SimplexC
+.. automodule:: build
    :members:
    :undoc-members:
    :show-inheritance:
