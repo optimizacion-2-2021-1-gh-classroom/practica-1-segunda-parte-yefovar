@@ -1,0 +1,7 @@
+#Paqueteria necesaria
+
+numpy
+pytest
+scipy
+pulp
+cvxpy

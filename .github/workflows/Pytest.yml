@@ -1,0 +1,24 @@
+name: Test con pytest
+on:
+  [push, workflow_dispatch]
+  #[push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Cython
+          pip install -r src/tests/requirements.txt
+          pip install -e src/
+      - name: Test for Simplex
+        run: python src/tests/test.py
+      - name: Test for SimplexC
+        run: python src/tests/tests_simpexc.py

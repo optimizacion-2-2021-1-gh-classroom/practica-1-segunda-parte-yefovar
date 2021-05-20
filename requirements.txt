@@ -1,0 +1,6 @@
+numpy==1.19.3
+pytest
+scipy
+pulp
+cvxpy
+cython
