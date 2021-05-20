@@ -7,6 +7,7 @@ La documentación del código puede puede verse `aqui <https://optimizacion-2-20
 
 
 .. automodule:: SimplexC
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   :toctree: _autosummary
+   :recursive:
+   SimplexC
+
