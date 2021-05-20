@@ -3,7 +3,7 @@ SimplexC package
 
 Module contents
 ---------------
-.. automodule:: build
+.. automodule:: SpjhinxC
    :members:
    :undoc-members:
    :show-inheritance:
