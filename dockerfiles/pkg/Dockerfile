@@ -30,7 +30,6 @@ RUN pip install -q git+"git://github.com/optimizacion-2-2021-1-gh-classroom/prac
 
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt            
-RUN pip install numpy==1.19.3 --no-binary numpy --force-reinstall
 RUN groupadd ${USER_BINDER}
 RUN useradd ${USER_BINDER} -g ${USER_BINDER} -m -s /bin/bash
 RUN echo 'jovyan ALL=(ALL:ALL) NOPASSWD:ALL' | (EDITOR='tee -a' visudo)
