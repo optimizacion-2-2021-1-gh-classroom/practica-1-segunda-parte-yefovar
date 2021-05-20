@@ -1,4 +1,4 @@
-Modules
+Módulos
 =======
 
 .. toctree::
